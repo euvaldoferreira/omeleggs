@@ -9,11 +9,10 @@ const server = restify.createServer({
 var knex = require('knex')({
     client: 'mysql',
     connection: {
-      host : 'mysql556.umbler.com',
-      port:'41890',
-      user : 'usrbairristadb',
-      password : 'Eixk}6(DVH7',
-      database : 'bairristadb'
+      host : 'mysql07-farm76.kinghost.net',
+      user : 'bairrista',
+      password : 'Eixk6DVH7',
+      database : 'bairrista'
     }
   });
 
@@ -28,7 +27,7 @@ server.listen(8080, function () {
 
 //rotas REST
 
-server.get('/v1.0/', (req, res, next) => {
+server.get('/', (req, res, next) => {
     knex('rest').then((dados) => {
         res.send(dados);    
     },next)
